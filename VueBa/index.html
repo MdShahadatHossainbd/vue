@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Vue Js Bangla</title>
+  </head>
+  <body>
+    <div id="app">
+
+    {{message}}<br>
+       {{chat}}<br>
+       <label>Select Name</label>
+       <input type="text" v-model="name"><br>
+       {{name}}<br>
+       <input type="text" v-model="PPP">
+
+      <div class="form-group">
+        <label>Select Gari</label>
+         <select class="form-control" v-model="Gari">
+         <option value="CAR">CAR</option>
+         <option value="BUS">BUS</option>
+         <option value="CNG">CNG</option>
+              </select><br>
+              {{Gari}}
+         </div>
+
+         <div class="">
+           CheckBox
+         </div>
+        <div class="CheckBox">
+          <input type="checkbox" id="HTML" value="HTML" v-model="skill">
+          <label for="gridCheck1">HTML</label>
+
+        </div>
+
+       <div class="CheckBox">
+         <input type="checkbox" id="CSS" value="CSS" v-model="skill">
+         <label for="gridCheck1">CSS</label>
+       </div>
+
+      <div class="CheckBox">
+        <input type="checkbox" id="VUE" value="VUE" v-model="skill">
+        <label for="gridCheck1">Vue</label>
+
+      </div>
+      {{skill}}
+
+      <div class="CheckBox">
+        <input type="radio" id="male" value="Male" v-model="gender">
+        <label for="gridCheck1">Male</label>
+      </div>
+      <div class="CheckBox">
+        <input type="radio" id="female" value="Female" v-model="gender">
+        <label for="gridCheck1">Female</label><br>
+        {{gender}}
+      </div>
+
+      <div class="text-success" v-bind:class="{'text-danger':hasError}">This is Binding</div>
+
+      <div class="social">
+        <a :href="facebook.url" v-bind:title="facebook.title">{{facebook.name}}</a>
+        <a :href="youtube.url" v-bind:title="facebook.title">{{youtube.name}}</a>
+      </div>
+
+
+
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script type="text/javascript">
+     var app = new Vue({
+       el:"#app",
+       data: {
+         isActive:true,
+         hasError:true,
+         message: 'Hello World!',
+         chat: 'why are u doing?',
+         name:"Shahadat",
+         PPP:"",
+         Gari:"",
+         skill:[],
+         gender:'',
+         facebook:{
+           name:'Facebook',title:'Learn Schooling', url:'https://www.facebook.com'
+         },
+         youtube: {
+           name:'YouTube',title:'Learn Schooling', url:'https://www.youtube.com'
+         },
+       }
+     });
+    </script>
+
+  </body>
+</html>
